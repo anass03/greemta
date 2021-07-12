@@ -701,6 +701,13 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-left">
+                        {% if page.prizes %}
+                        {% capture prizes %}
+                        {% include_relative _texts/{{ page.prizes}} %}
+                        {% endcapture %}
+                        {{ prizes | markdownfy }}
+                        {% endif %}
+                        <!---
                         <h5 data-aos="fade-up">
                             The total award fund for the competition amounts to €8000 and will be split in the following way:
                         </h5>
@@ -712,9 +719,11 @@
                         </p>
                         <p data-aos="fade-up" data-aos-delay="400">See all details in the <a href="#rules">Rules</a></p>
                     </div>
+                    
                     <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
                         <img width="80%" src="assets/img/trophy.svg" alt="">
                     </div>
+                -->
                 </div>
             </div>
         </section>
